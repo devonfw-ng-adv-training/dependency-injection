@@ -1,0 +1,12 @@
+<div>
+  <app-player-new></app-player-new>
+  <h3>Players</h3>
+  <ul>
+    <li (click)="showDetails(player)" *ngFor="let player of players | async">
+      {{player.id}}: {{player.lastname}}, {{player.firstname}} ({{player.team | slice:0:3 | uppercase }})
+    </li>
+  </ul>
+  <app-player-detail (closeDetails)="closeDetails(i)" *ngFor="let selectedPlayer of selectedPlayers; let i = index"
+                     [player]="selectedPlayer">
+  </app-player-detail>
+</div>

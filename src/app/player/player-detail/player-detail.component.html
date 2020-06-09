@@ -1,0 +1,35 @@
+<div class="details">
+  <div [class.canceled]="message==='Canceled'" class="msg">{{message}}</div>
+  <fieldset id=name>
+    <span>{{player.firstname}} {{player.lastname}} </span>
+  </fieldset>
+  <fieldset id="position">
+    <label>Position:
+      <span>{{player.position}}</span></label>
+  </fieldset>
+  <fieldset>
+    <label>First Name: <input [(ngModel)]="player.firstname"></label>
+  </fieldset>
+  <fieldset>
+    <label>Last Name: <input [(ngModel)]="player.lastname"></label>
+  </fieldset>
+  <fieldset>
+    <label>College: <input [(ngModel)]="player.college"></label>
+  </fieldset>
+  <fieldset>
+    <label>Team: <input [(ngModel)]="player.team"></label>
+  </fieldset>
+  <fieldset>
+    <label>Position:
+      <select (ngModelChange)="player.position=$event;" [(ngModel)]="player.position">
+        <option *ngFor="let position of keys(positions)"
+                [ngValue]="positions[position]">{{positions[position]}}</option>
+      </select>
+    </label>
+  </fieldset>
+  <fieldset>
+    <button (click)="onSaveClicked()">Save</button>
+    <button (click)="onCancelClicked()">Cancel</button>
+    <button (click)="onCloseClicked()">Close</button>
+  </fieldset>
+</div>

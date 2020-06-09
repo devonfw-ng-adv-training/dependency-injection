@@ -1,0 +1,6 @@
+<button (click)="add()">Add new Player</button>
+<div *ngIf="player">
+  <app-player-detail (closeDetails)="closeDetails()" (saveDetails)="closeDetails()" [player]="player">
+  </app-player-detail>
+</div>
+

@@ -1,0 +1,19 @@
+li {
+  padding: 20px 50px;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+  white-space: nowrap;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.active {
+  background-color: bisque;
+}
